@@ -3,7 +3,7 @@
 bin
 .classpath
 .project
-.matadata
+.metadata
 .recommenders
 
 # Compiled class file
