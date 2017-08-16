@@ -57,3 +57,4 @@
 - wkhtmltopdf
 - ImageMagick
 - poi.jar
+- zxing.jar
