@@ -1,4 +1,4 @@
-package com.shr.action;
+package com.shr.function;
 
 import java.util.List;
 
@@ -6,19 +6,19 @@ import com.shr.model.Task;
 import com.shr.model.Video;
 
 public interface VideoInterface {
-	//×ªÂë
+	//×ªï¿½ï¿½
 	public void encode(Task task);
-	//»ñÈ¡ÊÓÆµ»ù±¾ÐÅÏ¢
+	//ï¿½ï¿½È¡ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public Video getInfo(Task task);
-	//Á÷»¯´¦Àí£¬Ö»Ö§³ÖflvºÍmp4
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»Ö§ï¿½ï¿½flvï¿½ï¿½mp4
 	public void hint(Task task);
-	//ÊÓÆµ¼ôÇÐ
+	//ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 	public List<Video> slice(Task task);
-	//ÊÓÆµÁ¬½Ó
+	//ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 	public Video concat(Task task);
 	//Ë®Ó¡
 	public Video waterPrint(Task task);
-	//»­ÖÐ»­
+	//ï¿½ï¿½ï¿½Ð»ï¿½
 	public Video vInv(Task task);
 	
 	

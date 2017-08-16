@@ -1,4 +1,4 @@
-package com.third;
+package com.third.zxing;
 
 import java.awt.image.BufferedImage;
 

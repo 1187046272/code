@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.third;
+package com.third.zxing;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

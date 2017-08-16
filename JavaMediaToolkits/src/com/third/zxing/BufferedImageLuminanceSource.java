@@ -1,4 +1,4 @@
-package com.third;
+package com.third.zxing;
 
 import com.google.zxing.LuminanceSource;
 

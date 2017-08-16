@@ -1,4 +1,4 @@
-package com.shr.test;
+package com.test;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -38,8 +38,8 @@ import com.google.zxing.Result;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
-import com.third.BufferedImageLuminanceSource;
-import com.third.MatrixToImageWriter;
+import com.third.zxing.BufferedImageLuminanceSource;
+import com.third.zxing.MatrixToImageWriter;
 
 public class Test {
 	public static void main(String[] args) {
