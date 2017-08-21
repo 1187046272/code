@@ -6,6 +6,7 @@ bin
 
 .recommenders
 .metadata
+RemoteSystemsTempFiles
 
 # Compiled class file
 *.class
