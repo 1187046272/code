@@ -5,6 +5,7 @@ bin
 .project
 
 .recommenders
+.metadata
 
 # Compiled class file
 *.class
