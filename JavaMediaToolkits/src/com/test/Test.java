@@ -38,13 +38,16 @@ import com.google.zxing.Result;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
+import com.shr.exception.ErrorEnum;
 import com.third.zxing.BufferedImageLuminanceSource;
 import com.third.zxing.MatrixToImageWriter;
 
 public class Test {
 	public static void main(String[] args) {
 			try {
-				Test.testEncode();
+				
+				
+				//Test.testEncode();
 				/*while(true){
 					Thread.sleep(1500);
 					Test.decodeQr("d:/1.jpg");
