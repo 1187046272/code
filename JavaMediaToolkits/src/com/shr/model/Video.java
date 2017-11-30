@@ -1,8 +1,8 @@
 package com.shr.model;
 
 public class Video {
-	private String videoFilename;
-	private String videoSrc;
+	private String fileName;
+	private String fileUrl;
 	
 	private int width;
 	private int height;
@@ -17,17 +17,18 @@ public class Video {
 	private String codec;
 	private int quality = 20;
 	private boolean isHint = true;
-	public String getVideoFilename() {
-		return videoFilename;
+	
+	public String getFileName() {
+		return fileName;
 	}
-	public void setVideoFilename(String videoFilename) {
-		this.videoFilename = videoFilename;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
-	public String getVideoSrc() {
-		return videoSrc;
+	public String getFileUrl() {
+		return fileUrl;
 	}
-	public void setVideoSrc(String videoSrc) {
-		this.videoSrc = videoSrc;
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 	public int getWidth() {
 		return width;
