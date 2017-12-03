@@ -1,4 +1,4 @@
-package com.test;
+package com.shr.example;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -38,14 +38,59 @@ import com.google.zxing.Result;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
-import com.shr.exception.ErrorEnum;
+import com.shr.function.VideoFunction;
+import com.shr.function.VideoInterface;
+import com.shr.model.Video;
 import com.third.zxing.BufferedImageLuminanceSource;
 import com.third.zxing.MatrixToImageWriter;
 
-public class Test {
+public class VideoTest {
+	
+	public void testEncode(){
+		VideoInterface vi = new VideoFunction();
+		Video res_video = new Video("d://3.mp4");
+		Video dest_video = new Video("d://7.flv");
+		
+		vi.encode(res_video, dest_video);
+	}
+	
+	public void getInfo(){
+		VideoInterface vi = new VideoFunction();
+		Video video = new Video("d://7.flv");
+		
+		vi.getInfo(video);
+		
+		System.out.println(video.getWidth()+"-"+video.getBitRate());
+	}
+	
 	public static void main(String[] args) {
-			try {
+		VideoTest vt = new VideoTest();	
+		try {
+				//vt.testEncode();
+				//vt.getInfo();
 				
+				
+				/*final CommandLine cmdLine = CommandLine.parse("ping www.baidu.com -n 10");
+				final DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
+				
+				DefaultExecutor executor = new DefaultExecutor();
+*/
+				/*
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				PumpStreamHandler psHandler = new PumpStreamHandler(baos, baos);
+				executor.setStreamHandler(psHandler);
+				*/
+				
+/*				executor.execute(cmdLine, resultHandler);
+				
+				//这里开始的代码会被立即执行下去，因为上面的语句不会被阻塞。
+				while(resultHandler.hasResult()){
+					System.out.println(new String(resultHandler.toString().getBytes(""),"GBK"));
+				}
+				
+				resultHandler.waitFor();//等待5秒。
+				
+*/				//System.out.println(baos.toString("GBK"));
 				
 				//Test.testEncode();
 				/*while(true){
@@ -63,7 +108,7 @@ public class Test {
 			
 	}
 	
-	public static void testEncode() throws WriterException, IOException {  
+	public static void testEncodeInfo() throws WriterException, IOException {  
         String filePath = "D://";  
         String fileName = "zxing.png";  
         String content = "吕帅涛";

@@ -1,4 +1,4 @@
-package com.shr.opt;
+package com.shr.tool;
 
 public class yamdi {
 

@@ -27,6 +27,23 @@ public class StringUtil {
 	}
 	
 	/**
+	 * 字符串转double
+	 * @param str double字符串
+	 * @return double数值
+	 */
+	public static double toDouble(String str){
+		return Double.parseDouble(str);
+	}
+	
+	public static boolean isRMVB(String str){
+		if("rmvb".endsWith(str) || "rm".endsWith(str)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
 	 * 根据文件路径返回文件名
 	 * @param url 文件路径
 	 * @return 文件名
