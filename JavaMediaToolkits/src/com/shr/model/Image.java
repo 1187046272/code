@@ -1,5 +1,8 @@
 package com.shr.model;
 
+import java.io.File;
+
+import com.shr.utils.StringUtil;
 
 /**
  * @author 孙浩然
@@ -17,6 +20,15 @@ public class Image implements Media{
 	long size;			//图片文件大小
 	
 	double alpha;		//透明度 0-1之间的值
+
+	public Image(String url) {
+		super();
+		this.url = url;
+		File file = new File(url);
+		this.fileName = StringUtil.getFileName(url);
+		this.format = StringUtil.getSurfix(url).toLowerCase();
+		this.setSize(file.length());
+	}
 
 	public String getUrl() {
 		return url;

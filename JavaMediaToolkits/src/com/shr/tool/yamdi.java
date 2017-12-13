@@ -1,5 +1,7 @@
 package com.shr.tool;
 
-public class yamdi {
+import com.shr.model.Video;
 
+public interface yamdi extends VideoTool{
+	public String hint(Video video);
 }

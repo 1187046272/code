@@ -22,7 +22,7 @@ public class Video implements Media{
 	private String videoFormat;		//视频封装格式
 	
 	private double bitRate;			//bit率
-	private double frameRate;			//帧率
+	private double frameRate;		//帧率
 	
 	private String vcodec;			//视频编解码器
 	private String acodec;			//音频编解码器
@@ -130,4 +130,16 @@ public class Video implements Media{
 		this.hasAudio = hasAudio;
 	}
 	
+	@Override
+	public String toString() {
+		String rtn = "视频信息：\n";
+		rtn += "文件名:" + this.fileName + "\n";
+		rtn += "视频宽度:" + this.width + "\n";
+		rtn += "视频高度:" + this.height + "\n";
+		rtn += "比特率:" + this.bitRate + "\n";
+		rtn += "帧率:" + this.frameRate + "\n";
+		rtn += "视频文件大小:" + this.videoSize + "\n";
+		rtn += "视频时长:" + this.videoLong + "\n";
+		return rtn;
+	}
 }

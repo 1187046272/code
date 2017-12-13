@@ -1,5 +1,5 @@
 package com.shr.tool;
 
-public class handBreak {
+public interface handBreak extends VideoTool{
 
 }

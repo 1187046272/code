@@ -54,6 +54,14 @@ public class VideoTest {
 		vi.encode(res_video, dest_video);
 	}
 	
+	public void testSlice(){
+		VideoInterface vi = new VideoFunction();
+		Video res_video = new Video("d://3.mp4");
+		Video dest_video = new Video("d://10.mp4");
+		
+		vi.slice(res_video,0,5, dest_video);
+	}
+	
 	public void getInfo(){
 		VideoInterface vi = new VideoFunction();
 		Video video = new Video("d://7.flv");
@@ -63,12 +71,22 @@ public class VideoTest {
 		System.out.println(video.getWidth()+"-"+video.getBitRate());
 	}
 	
+	public void hint(){
+		VideoInterface vi = new VideoFunction();
+		Video video = new Video("d://7.flv");
+		
+		vi.hint(video);
+		
+		System.out.println(video.getWidth()+"-"+video.getBitRate());
+	}
+	
 	public static void main(String[] args) {
 		VideoTest vt = new VideoTest();	
 		try {
 				//vt.testEncode();
 				//vt.getInfo();
-				
+				//vt.hint();
+				vt.testSlice();
 				
 				/*final CommandLine cmdLine = CommandLine.parse("ping www.baidu.com -n 10");
 				final DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
