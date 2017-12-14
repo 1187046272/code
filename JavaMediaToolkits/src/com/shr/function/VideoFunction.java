@@ -153,14 +153,41 @@ public class VideoFunction implements VideoInterface {
 
 	@Override
 	public Video subVideo(Video res_video, int start, int end,Video dest_video) {
-		// TODO Auto-generated method stub
-		return null;
+		return slice(res_video,start,end,dest_video);
 	}
 
 	@Override
-	public Image subGif(Video res_video, int start, int end, Video dest_video) {
-		// TODO Auto-generated method stub
-		return null;
+	public Image subGif(Video res_video, int start, int end, Image img) {
+		ffmpeg vtool = new ffmpeg();
+		
+		String cmd = vtool.subGif(res_video, start, end-start, img);
+		
+		String result = "";		
+		try {
+			result = CmdUtil.process(Conf.ToolDir + ffmpeg.Root, cmd, true);
+		} catch (OptException e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		
+		return img;
+	}
+	
+	@Override
+	public Image thumb(Video res_video,int start,Image img){
+		ffmpeg vtool = new ffmpeg();
+		
+		String cmd = vtool.thumb(res_video, start, img);
+		
+		String result = "";		
+		try {
+			result = CmdUtil.process(Conf.ToolDir + ffmpeg.Root, cmd, true);
+		} catch (OptException e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		
+		return img;
 	}
 
 	@Override

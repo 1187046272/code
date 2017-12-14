@@ -17,13 +17,14 @@ public interface VideoInterface {
 	//截取
 	public Video subVideo(Video res_video,int start,int end,Video dest_video);
 	//截取gif图片
-	public Image subGif(Video res_video,int start,int end,Video dest_video);
+	public Image subGif(Video res_video,int start,int end,Image img);
+	//截取缩略图
+	public Image thumb(Video res_video,int start,Image img);
 	//视频拼接
 	public Video concat(List<Video> videos);
 	//水印
 	public Video waterPrint(Video video);
 	//画中画
 	public void vInv();
-	
 	
 }

@@ -62,6 +62,24 @@ public class VideoTest {
 		vi.slice(res_video,0,5, dest_video);
 	}
 	
+	public void testGif(){
+		VideoInterface vi = new VideoFunction();
+		Video res_video = new Video("d://3.mp4");
+		com.shr.model.Image img = new com.shr.model.Image("d://a.gif");
+		img.setWidth(300);
+		img.setHeight(250);
+		vi.subGif(res_video,0,3, img);
+	}
+	
+	public void testThumb(){
+		VideoInterface vi = new VideoFunction();
+		Video res_video = new Video("d://3.mp4");
+		com.shr.model.Image img = new com.shr.model.Image("d://a.jpg");
+		//img.setWidth(300);
+		//img.setHeight(250);
+		vi.thumb(res_video,3, img);
+	}
+	
 	public void getInfo(){
 		VideoInterface vi = new VideoFunction();
 		Video video = new Video("d://7.flv");
@@ -86,7 +104,9 @@ public class VideoTest {
 				//vt.testEncode();
 				//vt.getInfo();
 				//vt.hint();
-				vt.testSlice();
+				//vt.testSlice();
+				//vt.testGif();
+				vt.testThumb();
 				
 				/*final CommandLine cmdLine = CommandLine.parse("ping www.baidu.com -n 10");
 				final DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();

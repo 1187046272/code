@@ -1,5 +1,6 @@
 package com.shr.tool.impl;
 
+import com.shr.model.Image;
 import com.shr.model.Video;
 import com.shr.utils.StringUtil;
 
@@ -94,5 +95,46 @@ public class ffmpeg implements com.shr.tool.ffmpeg{
 		System.out.println("命令："+cmd);
 		return cmd;
 	}
+
+	//ffmpeg -ss 0 -t 3 -i D:\4.mp4 -s 320x240 -f gif -r 1 D:\b.gif
+	@Override
+	public String subGif(Video video, int start, int len,Image img) {
+		String cmd = "ffmpeg -ss ";
+		cmd += start + " ";
+		cmd += "-t " + len + " -i ";
+		cmd += video.getFileUrl() +" ";
+		
+		if(img.getWidth() > 0 && img.getHeight() > 0){
+			cmd += "-s " + img.getWidth() + "x"+img.getHeight();
+		}
+				
+		cmd += " -f gif -r 1 -y ";
+		cmd += img.getUrl() + " ";
+		
+		System.out.println("生成命令" + cmd);
+		
+		return cmd;
+	}
+
+	//ffmpeg -i test.flv -y -f mjpeg -ss 3 -t 0.001 -s 320x240 test.jpg
+	@Override
+	public String thumb(Video video,int start, Image img) {
+		String cmd = "ffmpeg -i ";
+		cmd += video.getFileUrl() + " ";
+		cmd += "-y -f mjpeg -ss ";
+		cmd += start + " ";
+		cmd += "-t 0.001 ";
+		
+		if(img.getWidth() > 0 && img.getHeight() > 0){
+			cmd += "-s " + img.getWidth() + "x"+img.getHeight();
+		}
+		
+		cmd += " " + img.getUrl();
+		
+		System.out.println("命令：" + cmd);
+		return cmd;
+	}
+	
+	
 	
 }
