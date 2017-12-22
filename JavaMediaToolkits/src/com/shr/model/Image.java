@@ -1,6 +1,11 @@
 package com.shr.model;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
 
 import com.shr.utils.StringUtil;
 
@@ -28,6 +33,14 @@ public class Image implements Media{
 		this.fileName = StringUtil.getFileName(url);
 		this.format = StringUtil.getSurfix(url).toLowerCase();
 		this.setSize(file.length());
+		
+		try {
+			BufferedImage bi = ImageIO.read(new File(this.url));
+			this.width = bi.getWidth();
+			this.height = bi.getHeight();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getUrl() {

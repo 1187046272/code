@@ -3,6 +3,7 @@ package com.shr.function;
 import java.util.List;
 
 import com.shr.model.Image;
+import com.shr.model.Point;
 import com.shr.model.Video;
 
 public interface VideoInterface {
@@ -20,10 +21,11 @@ public interface VideoInterface {
 	public Image subGif(Video res_video,int start,int end,Image img);
 	//截取缩略图
 	public Image thumb(Video res_video,int start,Image img);
+	
 	//视频拼接
 	public Video concat(List<Video> videos);
 	//水印
-	public Video waterPrint(Video video);
+	public Video waterPrint(Video video,Image img,Point point,Video dest_video);
 	//画中画
 	public void vInv();
 	

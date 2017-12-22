@@ -40,6 +40,7 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.shr.function.VideoFunction;
 import com.shr.function.VideoInterface;
+import com.shr.model.Point;
 import com.shr.model.Video;
 import com.third.zxing.BufferedImageLuminanceSource;
 import com.third.zxing.MatrixToImageWriter;
@@ -80,6 +81,15 @@ public class VideoTest {
 		vi.thumb(res_video,3, img);
 	}
 	
+	public void testWaterPrint(){
+		VideoInterface vi = new VideoFunction();
+		Video res_video = new Video("d://3.mp4");
+		Video dest_video = new Video("d://water_3.mp4");
+		com.shr.model.Image img = new com.shr.model.Image("d://test.jpg");
+		Point point = new Point(10,10);
+		vi.waterPrint(res_video,img,point,dest_video);
+	}
+	
 	public void getInfo(){
 		VideoInterface vi = new VideoFunction();
 		Video video = new Video("d://7.flv");
@@ -106,7 +116,8 @@ public class VideoTest {
 				//vt.hint();
 				//vt.testSlice();
 				//vt.testGif();
-				vt.testThumb();
+				//vt.testThumb();
+				vt.testWaterPrint();
 				
 				/*final CommandLine cmdLine = CommandLine.parse("ping www.baidu.com -n 10");
 				final DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();

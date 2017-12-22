@@ -1,6 +1,7 @@
 package com.shr.tool.impl;
 
 import com.shr.model.Image;
+import com.shr.model.Point;
 import com.shr.model.Video;
 import com.shr.utils.StringUtil;
 
@@ -132,6 +133,19 @@ public class ffmpeg implements com.shr.tool.ffmpeg{
 		cmd += " " + img.getUrl();
 		
 		System.out.println("命令：" + cmd);
+		return cmd;
+	}
+
+	@Override
+	//ffmpeg -y -i test2.mp4 -ignore_loop 0 -i test.gif -filter_complex overlay=0:H-h test_out2.mp4
+	public String waterPrint(Video video, Image img,Point point,Video dest_video) {
+		String cmd = "ffmpeg -y -i ";
+		cmd += video.getFileUrl() + "  -i ";
+		cmd += img.getUrl() + " -filter_complex overlay=" + point.getX() + ":" + point.getY() + " ";
+		cmd += dest_video.getFileUrl();
+		
+		System.out.println("命令：" + cmd);
+		
 		return cmd;
 	}
 	

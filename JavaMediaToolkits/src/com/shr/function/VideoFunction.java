@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.shr.exception.OptException;
 import com.shr.model.Image;
+import com.shr.model.Point;
 import com.shr.model.Video;
 import com.shr.tool.impl.ffmpeg;
 import com.shr.tool.impl.mediaInfo;
@@ -197,9 +198,21 @@ public class VideoFunction implements VideoInterface {
 	}
 
 	@Override
-	public Video waterPrint(Video video) {
-		// TODO Auto-generated method stub
-		return null;
+	public Video waterPrint(Video video,Image img,Point point,Video dest_video) {
+		
+		ffmpeg vtool = new ffmpeg();
+		
+		String cmd = vtool.waterPrint(video,img,point,dest_video);
+		
+		String result = "";		
+		try {
+			result = CmdUtil.process(Conf.ToolDir + ffmpeg.Root, cmd, true);
+		} catch (OptException e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		
+		return dest_video;
 	}
 
 	@Override
