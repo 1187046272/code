@@ -3,7 +3,6 @@ package com.shr.model;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 import javax.imageio.ImageIO;
 
@@ -35,12 +34,26 @@ public class Image implements Media{
 		this.setSize(file.length());
 		
 		try {
-			BufferedImage bi = ImageIO.read(new File(this.url));
-			this.width = bi.getWidth();
-			this.height = bi.getHeight();
+			if(file.exists() && !file.isDirectory()){
+				BufferedImage bi = ImageIO.read(file);
+				this.width = bi.getWidth();
+				this.height = bi.getHeight();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Image(String url,int width,int height) {
+		super();
+		this.url = url;
+		File file = new File(url);
+		this.fileName = StringUtil.getFileName(url);
+		this.format = StringUtil.getSurfix(url).toLowerCase();
+		this.setSize(file.length());
+		
+		this.setWidth(width);
+		this.setHeight(height);
 	}
 
 	public String getUrl() {

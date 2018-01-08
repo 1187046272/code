@@ -6,7 +6,8 @@ public enum ErrorEnum {
 	io(3,"IO异常"),
 	net(4,"网络异常"),
 	fne(5,"文件未找到"),
-	procerror(6,"执行命令报错");
+	procerror(6,"执行命令报错"),
+	pe(7,"参数错误");
 	
 	private String message;
 	private int code;
