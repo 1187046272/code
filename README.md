@@ -1,8 +1,10 @@
 # JavaMediaToolkits介绍 #
 
-针对Windows平台，基于各种开源第三方多媒体处理库，用Java封装一套统一的多媒体处理类库。
+基于各种开源第三方多媒体处理库，用Java封装一套统一的多媒体处理类库。
 1.制作单机版本处理类库
-2.增加分布式特性
+2.增加任务队列
+3.增加jetty上传服务
+4.制作分布式版本
 
 ## 功能列表 ##
 **视频处理类**
@@ -26,23 +28,10 @@
 - 裁剪
 - 缩放
 - 旋转
-- 透明化
 - 改色
 - 切片
 - 加文字、图片等水印
 - gif生成
-
-**文档处理类**
-- 数据生成 pdf,excel生成
-- 网页生成pdf
-- word,txt生成swf flash
-
-**其他类**
-- 系统状态获取:CPU、内存占用、磁盘占用、网络
-- 进程管理：查询、开启、杀死（exe和Java程序）
-- Java Common Utils
-- 串口和并口通信
-- ......
 
 ## 依赖的类库列表(顺序不分先后) ##
 - ffmpeg
@@ -51,10 +40,5 @@
 - mp4box
 - mediainfo
 - mencoder
-- sigar.jar
-- jacob
-- rxtx
-- wkhtmltopdf
 - ImageMagick
-- poi.jar
 - zxing.jar
