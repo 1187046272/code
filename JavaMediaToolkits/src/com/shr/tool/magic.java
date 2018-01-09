@@ -5,6 +5,10 @@ import java.util.List;
 import com.shr.model.Image;
 import com.shr.model.Point;
 
+/**
+ * @author 孙浩然
+ * 用于生成基于imagemagic的图片处理命令。
+ */
 public interface magic extends ImageTool{
 	public String encode(Image res_img,Image dest_img);
 	public String scale(Image img, int width, int height);

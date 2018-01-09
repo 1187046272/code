@@ -36,8 +36,10 @@ public class Image implements Media{
 		try {
 			if(file.exists() && !file.isDirectory()){
 				BufferedImage bi = ImageIO.read(file);
-				this.width = bi.getWidth();
-				this.height = bi.getHeight();
+				if(bi != null){
+					this.width = bi.getWidth();
+					this.height = bi.getHeight();
+				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

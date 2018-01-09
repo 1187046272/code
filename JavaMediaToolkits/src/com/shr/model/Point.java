@@ -1,5 +1,9 @@
 package com.shr.model;
 
+/**
+ * @author 孙浩然
+ * 代表一个点，用于描述图片相对于左上角的位置。
+ */
 public class Point {
 	private int x;
 	private int y;

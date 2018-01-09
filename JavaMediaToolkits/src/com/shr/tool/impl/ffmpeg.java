@@ -149,6 +149,4 @@ public class ffmpeg implements com.shr.tool.ffmpeg{
 		return cmd;
 	}
 	
-	
-	
 }

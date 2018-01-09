@@ -6,6 +6,10 @@ import com.shr.model.Image;
 import com.shr.model.Point;
 import com.shr.model.Video;
 
+/**
+ * @author 孙浩然
+ * 视频处理接口定义
+ */
 public interface VideoInterface {
 	//视频转码
 	public Video encode(Video res_video,Video dest_video);
@@ -21,7 +25,6 @@ public interface VideoInterface {
 	public Image subGif(Video res_video,int start,int end,Image img);
 	//截取缩略图
 	public Image thumb(Video res_video,int start,Image img);
-	
 	//视频拼接
 	public Video concat(List<Video> videos);
 	//水印
